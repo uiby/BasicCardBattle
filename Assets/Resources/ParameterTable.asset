@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ca4107232e4814d8c84346d478f88f, type: 3}
   m_Name: ParameterTable
   m_EditorClassIdentifier: 
-  lifeScale: 0
-  attackScale: 0
-  defenseScale: 0
+  lifeScale: 10
+  attackScale: 10
+  defenseScale: 10

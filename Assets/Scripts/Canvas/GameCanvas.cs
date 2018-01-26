@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Charactor {
+public class GameCanvas : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

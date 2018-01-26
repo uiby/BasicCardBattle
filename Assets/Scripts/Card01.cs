@@ -7,9 +7,4 @@ public class Card01 : BasicCard {
 	void Start () {
 		Initialize();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
