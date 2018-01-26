@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//攻撃カード
-public class Card01 : BasicCard {
+public class Player : Charactor {
+
+	// Use this for initialization
 	void Start () {
-		Initialize();
+		
 	}
 	
 	// Update is called once per frame

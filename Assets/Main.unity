@@ -3681,6 +3681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852207519}
   - component: {fileID: 852207520}
+  - component: {fileID: 852207521}
   m_Layer: 0
   m_Name: Misaki_win_humanoid
   m_TagString: Untagged
@@ -3723,6 +3724,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &852207521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852207518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb381d57987139e478327ca80760566f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: f3c0fe394821b1b45b3049281bb419fd, type: 2}
+  lifePoint: 1
+  attackPoint: 1
+  defensePoint: 1
 --- !u!1 &857478573
 GameObject:
   m_ObjectHideFlags: 0
