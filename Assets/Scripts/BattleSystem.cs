@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BattleSystem : MonoBehaviour {
     [SerializeField] BattleCanvas battleCanvas;
+    [SerializeField] RandomFirst randomFirst;
     GameSystem gameSystem;
+    bool isSameCost = false;
 
     void Awake() {
         gameSystem = GetComponent<GameSystem>();
@@ -25,12 +27,15 @@ public class BattleSystem : MonoBehaviour {
     public Owner DecideFirstMovePlayer(BasicCard playerCard, BasicCard comCard) {
         var pCost = playerCard.GetCost();
         var cCost = comCard.GetCost();
+        isSameCost = false;
         if (pCost < cCost)
             return Owner.PLAYER;
         if (cCost < pCost)
             return Owner.COM;
 
-        return Random.Range(0, 2) == 0 ? Owner.PLAYER : Owner.COM;
+        //同コストの場合
+        isSameCost = true;
+        return randomFirst.randomer;
     }
 
     public IEnumerator PlayBattle(BasicCard firstCard, BasicCard secondCard) {
@@ -45,5 +50,10 @@ public class BattleSystem : MonoBehaviour {
         //カード名表示
         battleCanvas.ShowBattleCardName(secondCard.GetOwner());
         yield return StartCoroutine(secondCard.Play());
+
+        if (isSameCost) {
+            randomFirst.ChangeRandomer();
+        }
+
     }
 }

@@ -29,8 +29,8 @@ public class BattleCanvas : MonoBehaviour {
 
     //バトルカードの名前を表示
     public void ShowBattleCardName(Owner owner) {
-        if (owner == Owner.PLAYER) playerCardName.Show("lv."+playerCard.level+" "+playerCard.GetCardName());
-        else if (owner == Owner.COM) comCardName.Show("lv."+comCard.level+" "+comCard.GetCardName());
+        if (owner == Owner.PLAYER) playerCardName.Show("Lv."+playerCard.level+" "+playerCard.GetCardName());
+        else if (owner == Owner.COM) comCardName.Show("Lv."+comCard.level+" "+comCard.GetCardName());
     }
 
 }
