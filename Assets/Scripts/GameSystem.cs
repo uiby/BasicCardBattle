@@ -37,6 +37,9 @@ public class GameSystem : MonoBehaviour {
 
             if (FinishGame())
                 break;
+
+            player.useCard.Reflesh();
+            com.useCard.Reflesh();
         }
         //リザルト
         StartCoroutine(Result());
@@ -46,6 +49,9 @@ public class GameSystem : MonoBehaviour {
         Debug.Log("start turn");
         turnCount++;
         turnText.UpdateView(turnCount);
+        //バフの整理
+        player.UpdateBuff();
+        com.UpdateBuff();
         yield return null;
     }
 

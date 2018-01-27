@@ -329,13 +329,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 1
   charaAnimation: {fileID: 2041239959}
-  costText: {fileID: 241960813}
-  levelText: {fileID: 2025359063}
   nameText: {fileID: 970412137}
+  levelText: {fileID: 2025359063}
+  costText: {fileID: 241960813}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 2041239958}
   opponent: {fileID: 852207521}
   addtionalAttackAmount: 10
@@ -2512,13 +2509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 1
   charaAnimation: {fileID: 2041239959}
-  costText: {fileID: 1673974930}
-  levelText: {fileID: 1217356081}
   nameText: {fileID: 772275805}
+  levelText: {fileID: 1217356081}
+  costText: {fileID: 1673974930}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 2041239958}
   opponent: {fileID: 852207521}
   addtionalAttackAmount: 10
@@ -4375,13 +4369,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 0}
-  costText: {fileID: 1349708657}
-  levelText: {fileID: 1287368786}
   nameText: {fileID: 1958043656}
+  levelText: {fileID: 1287368786}
+  costText: {fileID: 1349708657}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 0}
   opponent: {fileID: 0}
   addtionalAttackAmount: 10
@@ -5742,9 +5733,9 @@ MonoBehaviour:
   owner: 0
   lifeGauge: {fileID: 345079427}
   paraTable: {fileID: 11400000, guid: f3c0fe394821b1b45b3049281bb419fd, type: 2}
-  lifePoint: 1
-  attackPoint: 1
-  defensePoint: 1
+  lifePoint: 5
+  attackPoint: 5
+  defensePoint: 5
   selectionCanvas: {fileID: 1435737925}
 --- !u!114 &852207522
 MonoBehaviour:
@@ -5890,7 +5881,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 15
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6204,14 +6195,14 @@ RectTransform:
   m_GameObject: {fileID: 910632022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1632364967}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.400017, y: 66.78}
+  m_AnchoredPosition: {x: 58.400005, y: 66.78}
   m_SizeDelta: {x: 83.2, y: 24.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910632024
@@ -6253,7 +6244,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 20
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
@@ -8241,7 +8232,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 15
     m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -11773,13 +11764,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 0}
-  costText: {fileID: 1117296747}
-  levelText: {fileID: 1077857696}
   nameText: {fileID: 1035222055}
+  levelText: {fileID: 1077857696}
+  costText: {fileID: 1117296747}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 0}
   opponent: {fileID: 0}
   addtionalAttackAmount: 10
@@ -11845,8 +11833,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1052763265}
-  - {fileID: 910632023}
   - {fileID: 1856674313}
+  - {fileID: 910632023}
   - {fileID: 1614483469}
   - {fileID: 774320499}
   m_Father: {fileID: 1928383963}
@@ -12497,8 +12485,8 @@ GameObject:
   - component: {fileID: 1702531688}
   - component: {fileID: 1702531687}
   - component: {fileID: 1702531686}
-  - component: {fileID: 1702531685}
   - component: {fileID: 1702531684}
+  - component: {fileID: 1702531685}
   m_Layer: 5
   m_Name: Card (2)
   m_TagString: Untagged
@@ -12621,21 +12609,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1702531682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d90593f5ab6ece4684e03f403612a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 852207522}
-  costText: {fileID: 36807074}
-  levelText: {fileID: 872686876}
   nameText: {fileID: 1949936090}
-  cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
+  levelText: {fileID: 872686876}
+  costText: {fileID: 36807074}
+  cardName: "\u3044\u3063\u304F\u3088\uFF5E\uFF01"
   user: {fileID: 852207521}
-  opponent: {fileID: 2041239958}
-  addtionalAttackAmount: 10
 --- !u!114 &1702531686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13170,13 +13153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 1
   charaAnimation: {fileID: 2041239959}
-  costText: {fileID: 1086668161}
-  levelText: {fileID: 1945152083}
   nameText: {fileID: 1645504340}
+  levelText: {fileID: 1945152083}
+  costText: {fileID: 1086668161}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 2041239958}
   opponent: {fileID: 852207521}
   addtionalAttackAmount: 10
@@ -13884,11 +13864,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1632364967}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.4, y: 66.78}
+  m_AnchoredPosition: {x: -58.400017, y: 66.78002}
   m_SizeDelta: {x: 83.2, y: 24.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856674314
@@ -13930,7 +13910,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 20
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
@@ -14784,8 +14764,8 @@ GameObject:
   - component: {fileID: 1961666512}
   - component: {fileID: 1961666511}
   - component: {fileID: 1961666510}
-  - component: {fileID: 1961666509}
   - component: {fileID: 1961666508}
+  - component: {fileID: 1961666509}
   m_Layer: 5
   m_Name: Card (3)
   m_TagString: Untagged
@@ -14908,21 +14888,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961666506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: e62ea78364025cf49a63d6bec334ea46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 852207522}
-  costText: {fileID: 2050069318}
-  levelText: {fileID: 1886965613}
   nameText: {fileID: 1174458279}
-  cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
+  levelText: {fileID: 1886965613}
+  costText: {fileID: 2050069318}
+  cardName: "\u53CD\u6483\u3060\u30FC\uFF01"
   user: {fileID: 852207521}
   opponent: {fileID: 2041239958}
-  addtionalAttackAmount: 10
 --- !u!114 &1961666510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15323,8 +15299,8 @@ GameObject:
   - component: {fileID: 2011604248}
   - component: {fileID: 2011604247}
   - component: {fileID: 2011604246}
-  - component: {fileID: 2011604245}
   - component: {fileID: 2011604244}
+  - component: {fileID: 2011604245}
   m_Layer: 5
   m_Name: Card (1)
   m_TagString: Untagged
@@ -15447,21 +15423,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2011604242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: bdf718a3840ab3b479c1ed8f37dac8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 852207522}
-  costText: {fileID: 1783169998}
-  levelText: {fileID: 2146490220}
   nameText: {fileID: 1186911783}
-  cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
-  user: {fileID: 852207521}
-  opponent: {fileID: 2041239958}
-  addtionalAttackAmount: 10
+  levelText: {fileID: 2146490220}
+  costText: {fileID: 1783169998}
+  cardName: "\u3070\u308A\u3070\u308A\u3042\u30FC"
 --- !u!114 &2011604246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15632,13 +15602,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 1
   charaAnimation: {fileID: 2041239959}
-  costText: {fileID: 1878799655}
-  levelText: {fileID: 1406048291}
   nameText: {fileID: 1343864409}
+  levelText: {fileID: 1406048291}
+  costText: {fileID: 1878799655}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 2041239958}
   opponent: {fileID: 852207521}
   addtionalAttackAmount: 10
@@ -15975,9 +15942,9 @@ MonoBehaviour:
   owner: 1
   lifeGauge: {fileID: 480161109}
   paraTable: {fileID: 11400000, guid: f3c0fe394821b1b45b3049281bb419fd, type: 2}
-  lifePoint: 1
-  attackPoint: 1
-  defensePoint: 1
+  lifePoint: 5
+  attackPoint: 5
+  defensePoint: 5
   myCardList:
   - {fileID: 2015227147}
   - {fileID: 29703468}
@@ -16236,13 +16203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   charaAnimation: {fileID: 852207522}
-  costText: {fileID: 841215294}
-  levelText: {fileID: 339884761}
   nameText: {fileID: 148924256}
+  levelText: {fileID: 339884761}
+  costText: {fileID: 841215294}
   cardName: "\u3042\u305F\u3063\u304F"
-  sentence: "\u76F8\u624B\u306B\u653B\u6483"
-  levelSentence: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B"
-  cost: 2
   user: {fileID: 852207521}
   opponent: {fileID: 2041239958}
   addtionalAttackAmount: 10

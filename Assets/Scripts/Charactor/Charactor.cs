@@ -11,7 +11,7 @@ public class Charactor : MonoBehaviour {
     [SerializeField, Range(1, 10)]public int lifePoint; //ポイント振り
     [SerializeField, Range(1, 10)]public int attackPoint; //ポイント振り
     [SerializeField, Range(1, 10)]public int defensePoint; //ポイント振り
-    List<float> attackBuffList = new List<float>();// 攻撃バフリスト
+    List<Buff> attackBuffList = new List<Buff>();// 攻撃バフリスト
 
     public int life{get; private set;} //体力
     public int attack{get; private set;} //攻撃力
@@ -22,8 +22,21 @@ public class Charactor : MonoBehaviour {
     protected CharaAnimation charaAnimation;
     public BasicCard useCard {get; protected set;} //使用するカード
 
-    float GetBuffResult(float baseAttackPoint) { 
-        return baseAttackPoint * attackBuffList.Aggregate( (now, next) => now * next);
+    public int GetAttacOnBuff() {
+        var rate = 1f;
+        for (int n = 0; n < attackBuffList.Count; n++) {
+            rate *= attackBuffList[n].rate;
+        }
+        return (int)(attack * rate);
+        //return baseAttackPoint * attackBuffList.Aggregate((now, next) => now * next.rate);
+    }
+
+    public void AddBuff(float rate, int count) {
+        attackBuffList.Add(new Buff(rate, count));
+    }
+    public void UpdateBuff() {
+        attackBuffList.ForEach(buff => buff.CountDown());
+        attackBuffList = attackBuffList.Where(buff => buff.count >= 0).ToList();
     }
 
     //ゲーム開始時の初期化
@@ -60,6 +73,10 @@ public class Charactor : MonoBehaviour {
     }
 
     public IEnumerator Damaged(int amount) {
+        if (useCard.OnPlayedOpponent()) {
+            yield return new WaitForSeconds(1f);
+            yield break;
+        }
         life = Mathf.Clamp(life - amount, 0, paraTable.lifeScale * lifePoint);
         lifeGauge.UpdateAmount(life);
         yield return null;
