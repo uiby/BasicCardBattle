@@ -6,18 +6,20 @@ using UnityEngine;
 //キャラクターの処理
 public class Charactor : MonoBehaviour {
     [SerializeField] Owner owner;
+    [SerializeField] Gauge lifeGauge;
     [SerializeField] public ParameterTable paraTable; //倍率
     [SerializeField, Range(1, 10)]public int lifePoint; //ポイント振り
     [SerializeField, Range(1, 10)]public int attackPoint; //ポイント振り
     [SerializeField, Range(1, 10)]public int defensePoint; //ポイント振り
     List<float> attackBuffList = new List<float>();// 攻撃バフリスト
 
-    protected int life; //体力
-    protected int attack; //攻撃力
-    protected int defense; //防御力
-    protected int attackRate; //攻撃倍率
+    public int life{get; private set;} //体力
+    public int attack{get; private set;} //攻撃力
+    public int defense{get; private set;} //防御力
+    public int attackRate{get; private set;} //攻撃倍率
 
     protected bool selectedCard;
+    protected CharaAnimation charaAnimation;
     public BasicCard useCard {get; protected set;} //使用するカード
 
     float GetBuffResult(float baseAttackPoint) { 
@@ -26,10 +28,12 @@ public class Charactor : MonoBehaviour {
 
     //ゲーム開始時の初期化
     public void Initialize() {
+        charaAnimation = GetComponent<CharaAnimation>();
         life = paraTable.lifeScale * lifePoint;
         attack = paraTable.attackScale * attackPoint;
         defense = paraTable.defenseScale * defensePoint;
         Debug.Log(owner+" life:"+life+" attack:"+attack+" defense:"+defense);
+        lifeGauge.Initialize(life, life);
     }
 
     //カード選択タイム
@@ -57,5 +61,12 @@ public class Charactor : MonoBehaviour {
         Debug.Log("select card:"+ card.GetCardName());
         useCard = card;
         selectedCard = true;
+    }
+
+    public IEnumerator Damaged(int amount) {
+        life = Mathf.Clamp(life - amount, 0, paraTable.lifeScale * lifePoint);
+        lifeGauge.UpdateAmount(life);
+        yield return null;
+        yield return StartCoroutine(charaAnimation.PlayAnimation("Damaged"));
     }
 }

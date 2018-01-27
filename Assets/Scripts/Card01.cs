@@ -4,7 +4,10 @@ using UnityEngine;
 
 //攻撃カード
 public class Card01 : BasicCard {
-	void Start () {
+    [SerializeField] Charactor user; //使用者
+    [SerializeField] Charactor opponent; //自分
+    [SerializeField, Range(10, 30)] int addtionalAttackAmount = 10;
+	void Awake () {
 		Initialize();
 	}
 
@@ -13,6 +16,6 @@ public class Card01 : BasicCard {
         yield return null;
         yield return new WaitForAnimation(charaAnimation.anim, 0);
 
-        played = true;
+        yield return StartCoroutine(opponent.Damaged(user.attack + addtionalAttackAmount * level));
     }
 }

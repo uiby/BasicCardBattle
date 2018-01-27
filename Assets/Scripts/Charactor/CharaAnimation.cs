@@ -12,7 +12,9 @@ public class CharaAnimation : MonoBehaviour {
 		//anim.Play("Standing@loop");
 	}
 
-    public void SetTrigger(string name) {
-        anim.SetTrigger(name);
+    public IEnumerator PlayAnimation(string name) {
+        anim.Play(name);
+        yield return null;
+        yield return new WaitForAnimation(anim, 0);
     }
 }

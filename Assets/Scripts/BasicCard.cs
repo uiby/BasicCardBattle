@@ -14,7 +14,6 @@ public class BasicCard : MonoBehaviour {
     [SerializeField] string levelSentence; //レベルが上がった際の効果
     [SerializeField, Range(1, 5)] int cost; //カードコスト 1~5
     Image background;
-    protected bool played = false;
     public int level {get; protected set;} //カードレベル 3段階 プレイする度に上がる
 
     //ゲーム開始時
@@ -29,17 +28,17 @@ public class BasicCard : MonoBehaviour {
     } //カードをプレイ時
 
     protected void OnPlayed() { //カードプレイ後
-        if (level == 3) return; //既にmax
-
         level++;
+        OnLevelUp();
+        UpdateView();
     }
 
     //カード実行
     public IEnumerator Play() {
-        //played = false;
         yield return null;
         yield return StartCoroutine(Action());
 
+        OnPlayed();
         Debug.Log(cardName+": played");
     }
 
