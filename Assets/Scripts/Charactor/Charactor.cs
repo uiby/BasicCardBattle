@@ -23,12 +23,17 @@ public class Charactor : MonoBehaviour {
     protected CharaAnimation charaAnimation;
     public BasicCard useCard {get; protected set;} //使用するカード
 
-    public int GetAttacOnBuff() {
+    public float GetTotalBuff() {
         var rate = 1f;
         for (int n = 0; n < attackBuffList.Count; n++) {
             rate *= attackBuffList[n].rate;
         }
-        return (int)(attack * rate);
+
+        return rate;
+    }
+
+    public int GetAttacOnBuff() {
+        return (int)(attack * GetTotalBuff());
         //return baseAttackPoint * attackBuffList.Aggregate((now, next) => now * next.rate);
     }
 

@@ -25,7 +25,7 @@ public class Card04 : BasicCard {
         if (!isPlayed) return false; //後行のためガード失敗
 
         charaAnimation.anim.Play("CounterAttack");
-        StartCoroutine(opponent.Damaged((int)(opponent.GetAttacOnBuff() * counterRate)));
+        StartCoroutine(opponent.Damaged((int)(opponent.GetAttacOnBuff() * counterRate * user.GetTotalBuff()))); //敵の攻撃力 * カウンター倍率　* 自分のバフ倍率
 
         return true;
     }

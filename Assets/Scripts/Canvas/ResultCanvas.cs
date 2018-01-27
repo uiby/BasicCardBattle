@@ -15,11 +15,11 @@ public class ResultCanvas : GuiParts {
     public void Show(string result) {
         gameResultText.text = result;
         gameObject.SetActive(true);
-        MovePosition(Vector2.zero, 0.25f);
+        MovePosition( new Vector2(0, -190), 0.25f);
     }
 
     public void Hide() {
-        MovePositionInTheMoment(new Vector2(width, 0));
+        MovePositionInTheMoment(new Vector2(width, -190));
         gameObject.SetActive(false);
     }
 

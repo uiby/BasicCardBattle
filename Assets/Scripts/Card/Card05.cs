@@ -20,5 +20,6 @@ public class Card05 : BasicCard {
     protected override void OnLevelUp() {
         cost += 1;
         percent = Mathf.Clamp(percent - decreasePercent, 10, 60);
+        sentence = percent+"%回復";
     }
 }
