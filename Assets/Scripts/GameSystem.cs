@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
     [SerializeField] GameCanvas gameCanvas;
+    [SerializeField] ResultCanvas resultCanvas;
     BattleSystem battleSystem;
     [SerializeField] Player player;
     [SerializeField] Com com;
@@ -78,9 +79,11 @@ public class GameSystem : MonoBehaviour {
         if (player.Dead()) {
             player.Lose();
             com.Win();
+            resultCanvas.Show("YOU LOSE...");
         } else {
             player.Win();
             com.Lose();
+            resultCanvas.Show("YOU WIN!");
         }
         yield return null;
     }
