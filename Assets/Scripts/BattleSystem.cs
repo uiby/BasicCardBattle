@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BattleSystem : MonoBehaviour {
     [SerializeField] BattleCanvas battleCanvas;
+    GameSystem gameSystem;
+
+    void Awake() {
+        gameSystem = GetComponent<GameSystem>();
+    }
 
     public void PrepareBattle(BasicCard playerCard, BasicCard comCard) {
         battleCanvas.SetUsingCard(playerCard, comCard);
@@ -25,7 +30,7 @@ public class BattleSystem : MonoBehaviour {
         if (cCost < pCost)
             return Owner.COM;
 
-        return Random.Range(0, 1) == 0 ? Owner.PLAYER : Owner.COM;
+        return Random.Range(0, 2) == 0 ? Owner.PLAYER : Owner.COM;
     }
 
     public IEnumerator PlayBattle(BasicCard firstCard, BasicCard secondCard) {
@@ -34,9 +39,11 @@ public class BattleSystem : MonoBehaviour {
         battleCanvas.ShowBattleCardName(firstCard.GetOwner());
         yield return StartCoroutine(firstCard.Play());
 
+        if (gameSystem.FinishGame())
+            yield break;
+
         //カード名表示
         battleCanvas.ShowBattleCardName(secondCard.GetOwner());
         yield return StartCoroutine(secondCard.Play());
-
     }
 }

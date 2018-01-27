@@ -50,11 +50,7 @@ public class Charactor : MonoBehaviour {
     }
 
     public bool Dead() {
-        return life < 0;
-    }
-
-    public void FinishTurn() {
-
+        return life <= 0;
     }
 
     protected void SelectCard(BasicCard card) {
@@ -68,5 +64,13 @@ public class Charactor : MonoBehaviour {
         lifeGauge.UpdateAmount(life);
         yield return null;
         yield return StartCoroutine(charaAnimation.PlayAnimation("Damaged"));
+    }
+
+    public void Win() {
+        StartCoroutine(charaAnimation.PlayAnimation("Winner"));
+    }
+
+    public void Lose() {
+        StartCoroutine(charaAnimation.PlayAnimation("Loser"));
     }
 }

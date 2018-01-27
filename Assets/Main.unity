@@ -10689,7 +10689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCanvas: {fileID: 0}
-  battleSystem: {fileID: 1642634538}
   player: {fileID: 852207521}
   com: {fileID: 2041239958}
 --- !u!4 &1642634537

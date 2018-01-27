@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
     [SerializeField] GameCanvas gameCanvas;
-    [SerializeField] BattleSystem battleSystem;
+    BattleSystem battleSystem;
     [SerializeField] Player player;
     [SerializeField] Com com;
 
 	// Use this for initialization
 	void Start () {
+        battleSystem = GetComponent<BattleSystem>();
 		StartCoroutine(GameLoop());
 	}
 
@@ -30,15 +31,11 @@ public class GameSystem : MonoBehaviour {
             //バトル開始(カードの早い順)
             yield return StartCoroutine(Battle());
 
-            if (player.Dead())
+            if (FinishGame())
                 break;
-            else if (com.Dead())
-                break;
-
-            //ターン終了
-            yield return StartCoroutine(FinishTurn());
         }
         //リザルト
+        StartCoroutine(Result());
     }
 
     IEnumerator StartTurn() {
@@ -70,18 +67,25 @@ public class GameSystem : MonoBehaviour {
 
         //コストの低いプレイヤからカード使用
         var firstMove = battleSystem.DecideFirstMovePlayer(player.useCard, com.useCard);
+        Debug.Log("first move:"+firstMove);
         var firstCard = firstMove == Owner.PLAYER ? player.useCard : com.useCard;
         var secondCard = firstMove == Owner.PLAYER ? com.useCard : player.useCard;
 
         yield return StartCoroutine(battleSystem.PlayBattle(firstCard, secondCard));
     }
 
-    //ターン終了
-    IEnumerator FinishTurn() {
-        Debug.Log("finish turn");
-        //カード効果アップ
-        player.FinishTurn();
-        com.FinishTurn();
+    IEnumerator Result() {
+        if (player.Dead()) {
+            player.Lose();
+            com.Win();
+        } else {
+            player.Win();
+            com.Lose();
+        }
         yield return null;
+    }
+
+    public bool FinishGame() {
+        return player.Dead() || com.Dead();
     }
 }
