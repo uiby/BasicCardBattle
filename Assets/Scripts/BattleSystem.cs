@@ -12,18 +12,6 @@ public class BattleSystem : MonoBehaviour {
         gameSystem = GetComponent<GameSystem>();
     }
 
-    public void PrepareBattle(BasicCard playerCard, BasicCard comCard) {
-        battleCanvas.SetUsingCard(playerCard, comCard);
-    }
-
-    public void ShowBattleCard() {
-        battleCanvas.Show();
-    }
-
-    public void HideBattleCard() {
-        battleCanvas.Hide();
-    }
-
     public Owner DecideFirstMovePlayer(BasicCard playerCard, BasicCard comCard) {
         var pCost = playerCard.GetCost();
         var cCost = comCard.GetCost();
@@ -41,14 +29,14 @@ public class BattleSystem : MonoBehaviour {
     public IEnumerator PlayBattle(BasicCard firstCard, BasicCard secondCard) {
         yield return null;
         //カード名表示
-        battleCanvas.ShowBattleCardName(firstCard.GetOwner());
+        battleCanvas.ShowBattleCardName(firstCard);
         yield return StartCoroutine(firstCard.Play());
 
         if (gameSystem.FinishGame())
             yield break;
 
         //カード名表示
-        battleCanvas.ShowBattleCardName(secondCard.GetOwner());
+        battleCanvas.ShowBattleCardName(secondCard);
         yield return StartCoroutine(secondCard.Play());
 
         if (isSameCost) {

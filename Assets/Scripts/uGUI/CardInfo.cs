@@ -35,7 +35,7 @@ public class CardInfo : GuiParts {
         Level.text = "Level "+card.level;
         cardSentence.text = card.GetSentence();
         levelUpSentence.text = card.GetLevelSentence();
-        MovePositionInTheMoment(new Vector2(290, -110));
+        MovePosition(new Vector2(290, -110), 0.2f);
     }
 
     public void Hide() {
@@ -45,7 +45,7 @@ public class CardInfo : GuiParts {
 
     void TimeOver() {
         timer = 0;
-        MovePositionInTheMoment(new Vector2(290, -340));
+        MovePosition(new Vector2(290, -340), 0.2f);
     }
 }
 

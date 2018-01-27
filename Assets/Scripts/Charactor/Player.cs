@@ -6,14 +6,9 @@ using UnityEngine.UI;
 public class Player : Charactor {
     [SerializeField] GuiParts selectionCanvas;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
     public override void StartCardSelection() {
         base.StartCardSelection();
-        selectionCanvas.MovePosition(new Vector2(-150, -150), 0.3f);
+        selectionCanvas.MovePosition(new Vector2(-120, -150), 0.3f);
     }
 
     public void OnTapCard(BasicCard card) {

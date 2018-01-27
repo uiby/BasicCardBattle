@@ -72,10 +72,8 @@ public class GameSystem : MonoBehaviour {
     IEnumerator Battle() {
         Debug.Log("battle");
         yield return null;
-        battleSystem.PrepareBattle(player.useCard, com.useCard);
-        battleSystem.ShowBattleCard();
-        yield return new WaitForSeconds(2f);
-        battleSystem.HideBattleCard();
+
+        yield return new WaitForSeconds(1f);
 
         //コストの低いプレイヤからカード使用
         var firstMove = battleSystem.DecideFirstMovePlayer(player.useCard, com.useCard);

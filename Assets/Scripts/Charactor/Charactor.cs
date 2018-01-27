@@ -13,7 +13,8 @@ public class Charactor : MonoBehaviour {
     [SerializeField, Range(1, 10)]public int defensePoint; //ポイント振り
     List<Buff> attackBuffList = new List<Buff>();// 攻撃バフリスト
 
-    public int life{get; private set;} //体力
+    public int life{get; private set;} //ライフ
+    public int maxLife{get; private set;} //最大ライフ
     public int attack{get; private set;} //攻撃力
     public int defense{get; private set;} //防御力
     public int attackRate{get; private set;} //攻撃倍率
@@ -43,6 +44,7 @@ public class Charactor : MonoBehaviour {
     public void Initialize() {
         charaAnimation = GetComponent<CharaAnimation>();
         life = paraTable.lifeScale * lifePoint;
+        maxLife = life;
         attack = paraTable.attackScale * attackPoint;
         defense = paraTable.defenseScale * defensePoint;
         Debug.Log(owner+" life:"+life+" attack:"+attack+" defense:"+defense);
@@ -77,10 +79,15 @@ public class Charactor : MonoBehaviour {
             yield return new WaitForSeconds(1f);
             yield break;
         }
-        life = Mathf.Clamp(life - amount, 0, paraTable.lifeScale * lifePoint);
+        life = Mathf.Clamp(life - amount, 0, maxLife);
         lifeGauge.UpdateAmount(life);
         yield return null;
         yield return StartCoroutine(charaAnimation.PlayAnimation("Damaged"));
+    }
+
+    public void Recovery(int amount) {
+        life = Mathf.Clamp(life + amount, 0, maxLife);
+        lifeGauge.UpdateAmount(life);
     }
 
     public void Win() {
