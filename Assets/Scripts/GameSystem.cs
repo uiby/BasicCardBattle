@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
-    [SerializeField] GameCanvas gameCanvas;
+    [SerializeField] TurnText turnText;
     [SerializeField] ResultCanvas resultCanvas;
-    BattleSystem battleSystem;
     [SerializeField] Player player;
     [SerializeField] Com com;
+    BattleSystem battleSystem;
+
+    int turnCount = 0;
 
 	// Use this for initialization
 	void Start () {
         battleSystem = GetComponent<BattleSystem>();
+        turnCount = 0;
 		StartCoroutine(GameLoop());
 	}
 
@@ -41,6 +44,8 @@ public class GameSystem : MonoBehaviour {
 
     IEnumerator StartTurn() {
         Debug.Log("start turn");
+        turnCount++;
+        turnText.UpdateView(turnCount);
         yield return null;
     }
 
