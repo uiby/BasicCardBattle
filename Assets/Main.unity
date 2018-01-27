@@ -217,8 +217,8 @@ GameObject:
   - component: {fileID: 29703471}
   - component: {fileID: 29703470}
   - component: {fileID: 29703469}
-  - component: {fileID: 29703468}
   - component: {fileID: 29703467}
+  - component: {fileID: 29703468}
   m_Layer: 5
   m_Name: Card (1)
   m_TagString: Untagged
@@ -234,7 +234,7 @@ RectTransform:
   m_GameObject: {fileID: 29703465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 970412136}
   - {fileID: 2025359062}
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 29703465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: bdf718a3840ab3b479c1ed8f37dac8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 1
@@ -332,10 +332,7 @@ MonoBehaviour:
   nameText: {fileID: 970412137}
   levelText: {fileID: 2025359063}
   costText: {fileID: 241960813}
-  cardName: "\u3042\u305F\u3063\u304F"
-  user: {fileID: 2041239958}
-  opponent: {fileID: 852207521}
-  addtionalAttackAmount: 10
+  cardName: "\u3070\u308A\u3070\u308A\u3042\u30FC"
 --- !u!114 &29703469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,8 +2394,8 @@ GameObject:
   - component: {fileID: 368183563}
   - component: {fileID: 368183562}
   - component: {fileID: 368183561}
-  - component: {fileID: 368183560}
   - component: {fileID: 368183559}
+  - component: {fileID: 368183560}
   m_Layer: 5
   m_Name: Card (3)
   m_TagString: Untagged
@@ -2414,7 +2411,7 @@ RectTransform:
   m_GameObject: {fileID: 368183557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 772275804}
   - {fileID: 1217356080}
@@ -2504,7 +2501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 368183557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: e62ea78364025cf49a63d6bec334ea46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 1
@@ -2512,10 +2509,9 @@ MonoBehaviour:
   nameText: {fileID: 772275805}
   levelText: {fileID: 1217356081}
   costText: {fileID: 1673974930}
-  cardName: "\u3042\u305F\u3063\u304F"
+  cardName: "\u53CD\u6483\u3057\u307E\u3059\uFF01"
   user: {fileID: 2041239958}
   opponent: {fileID: 852207521}
-  addtionalAttackAmount: 10
 --- !u!114 &368183561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13041,8 +13037,8 @@ GameObject:
   - component: {fileID: 1730928698}
   - component: {fileID: 1730928697}
   - component: {fileID: 1730928696}
-  - component: {fileID: 1730928695}
   - component: {fileID: 1730928694}
+  - component: {fileID: 1730928695}
   m_Layer: 5
   m_Name: Card (2)
   m_TagString: Untagged
@@ -13058,7 +13054,7 @@ RectTransform:
   m_GameObject: {fileID: 1730928692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1645504339}
   - {fileID: 1945152082}
@@ -13148,7 +13144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1730928692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d90593f5ab6ece4684e03f403612a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 1
@@ -13156,10 +13152,8 @@ MonoBehaviour:
   nameText: {fileID: 1645504340}
   levelText: {fileID: 1945152083}
   costText: {fileID: 1086668161}
-  cardName: "\u3042\u305F\u3063\u304F"
+  cardName: "\u3046\u3046\u3046\u3046\u3046"
   user: {fileID: 2041239958}
-  opponent: {fileID: 852207521}
-  addtionalAttackAmount: 10
 --- !u!114 &1730928696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15947,9 +15941,9 @@ MonoBehaviour:
   defensePoint: 5
   myCardList:
   - {fileID: 2015227147}
-  - {fileID: 29703468}
-  - {fileID: 1730928695}
-  - {fileID: 368183560}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2041239959
 MonoBehaviour:
   m_ObjectHideFlags: 0
