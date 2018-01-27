@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
     [SerializeField] GameCanvas gameCanvas;
-    [SerializeField] BattleCanvas battleCanvas;
+    [SerializeField] BattleSystem battleSystem;
     [SerializeField] Player player;
     [SerializeField] Com com;
 
@@ -38,9 +38,7 @@ public class GameSystem : MonoBehaviour {
             //ターン終了
             yield return StartCoroutine(FinishTurn());
         }
-
         //リザルト
-
     }
 
     IEnumerator StartTurn() {
@@ -65,11 +63,17 @@ public class GameSystem : MonoBehaviour {
     IEnumerator Battle() {
         Debug.Log("battle");
         yield return null;
-        battleCanvas.SetUsingCard(player.useCard, com.useCard);
-        battleCanvas.Show();
+        battleSystem.PrepareBattle(player.useCard, com.useCard);
+        battleSystem.ShowBattleCard();
         yield return new WaitForSeconds(2f);
+        battleSystem.HideBattleCard();
 
         //コストの低いプレイヤからカード使用
+        var firstMove = battleSystem.DecideFirstMovePlayer(player.useCard, com.useCard);
+        var firstCard = firstMove == Owner.PLAYER ? player.useCard : com.useCard;
+        var secondCard = firstMove == Owner.PLAYER ? com.useCard : player.useCard;
+
+        yield return StartCoroutine(battleSystem.PlayBattle(firstCard, secondCard));
     }
 
     //ターン終了

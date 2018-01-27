@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : Charactor {
-    [SerializeField] GameObject selectionCanvas;
+    [SerializeField] GuiParts selectionCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +13,11 @@ public class Player : Charactor {
 	
     public override void StartCardSelection() {
         base.StartCardSelection();
-        selectionCanvas.SetActive(true);
+        selectionCanvas.MovePosition(new Vector2(-150, -150), 0.3f);
     }
 
     public void OnTapCard(BasicCard card) {
         SelectCard(card);
-        selectionCanvas.SetActive(false);
+        selectionCanvas.MovePosition(new Vector2(-700, -150), 0.3f);
     }
 }

@@ -9,8 +9,7 @@ public class CardName : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text = GetComponent<Text>();
-        text.text = "";
-        text.enabled = false;
+        Hide();
 	}
 
     public void Show(string str) {
@@ -19,7 +18,7 @@ public class CardName : MonoBehaviour {
 
     IEnumerator Effect(string str) {
         text.text = str;
-        text.enabled = false;
+        text.enabled = true;
         yield return new WaitForSeconds(2f);
         Hide();
     }

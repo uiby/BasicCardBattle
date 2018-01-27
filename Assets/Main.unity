@@ -304,7 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: 0
+  owner: 1
+  charaAnimation: {fileID: 2041239959}
   costText: {fileID: 241960813}
   levelText: {fileID: 2025359063}
   nameText: {fileID: 970412137}
@@ -2151,7 +2152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: 0
+  owner: 1
+  charaAnimation: {fileID: 2041239959}
   costText: {fileID: 1673974930}
   levelText: {fileID: 1217356081}
   nameText: {fileID: 772275805}
@@ -3981,6 +3983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 0}
   costText: {fileID: 1349708657}
   levelText: {fileID: 1287368786}
   nameText: {fileID: 1958043656}
@@ -5098,10 +5101,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 852207519}
-  - component: {fileID: 852207520}
   - component: {fileID: 852207521}
+  - component: {fileID: 852207522}
+  - component: {fileID: 852207520}
   m_Layer: 0
-  m_Name: Misaki_win_humanoid
+  m_Name: Misaki_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5128,16 +5132,15 @@ Transform:
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 3fa7e78f8230bbc4aa653b2c7921db90,
-    type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 852207518}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3fa7e78f8230bbc4aa653b2c7921db90, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: cb61fd11d8ab28646958c86373e38fb7, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5158,7 +5161,19 @@ MonoBehaviour:
   lifePoint: 1
   attackPoint: 1
   defensePoint: 1
-  selectionCanvas: {fileID: 1435737921}
+  selectionCanvas: {fileID: 1435737925}
+--- !u!114 &852207522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852207518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3817777f524814da94be35ebc1115c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &857478573
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,6 +9119,7 @@ GameObject:
   - component: {fileID: 1435737922}
   - component: {fileID: 1435737924}
   - component: {fileID: 1435737923}
+  - component: {fileID: 1435737925}
   m_Layer: 5
   m_Name: SelectionCanvas
   m_TagString: Untagged
@@ -9129,9 +9145,9 @@ RectTransform:
   m_Father: {fileID: 1928383963}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 227, y: 80}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: -150}
   m_SizeDelta: {x: 420, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435737923
@@ -9167,6 +9183,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435737921}
+--- !u!114 &1435737925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435737921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4df9c348a9795143a61cf630a5896a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1451090436
 GameObject:
   m_ObjectHideFlags: 0
@@ -10401,6 +10428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 0}
   costText: {fileID: 1117296747}
   levelText: {fileID: 1077857696}
   nameText: {fileID: 1035222055}
@@ -10568,6 +10596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642634537}
   - component: {fileID: 1642634536}
+  - component: {fileID: 1642634538}
   m_Layer: 0
   m_Name: GameSystem
   m_TagString: Untagged
@@ -10587,7 +10616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCanvas: {fileID: 0}
-  battleCanvas: {fileID: 0}
+  battleSystem: {fileID: 1642634538}
   player: {fileID: 852207521}
   com: {fileID: 2041239958}
 --- !u!4 &1642634537
@@ -10603,6 +10632,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642634538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642634535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99192e45e0dc2846991d2142ffb55f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleCanvas: {fileID: 1517579510}
 --- !u!1 &1645504338
 GameObject:
   m_ObjectHideFlags: 0
@@ -11124,6 +11165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 852207522}
   costText: {fileID: 36807074}
   levelText: {fileID: 872686876}
   nameText: {fileID: 1949936090}
@@ -11641,7 +11683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: 0
+  owner: 1
+  charaAnimation: {fileID: 2041239959}
   costText: {fileID: 1086668161}
   levelText: {fileID: 1945152083}
   nameText: {fileID: 1645504340}
@@ -13268,6 +13311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 852207522}
   costText: {fileID: 2050069318}
   levelText: {fileID: 1886965613}
   nameText: {fileID: 1174458279}
@@ -13781,6 +13825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 852207522}
   costText: {fileID: 1783169998}
   levelText: {fileID: 2146490220}
   nameText: {fileID: 1186911783}
@@ -13934,7 +13979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e6cdcbc26ecc54d9f4436ec38d00ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: 0
+  owner: 1
+  charaAnimation: {fileID: 2041239959}
   costText: {fileID: 1878799655}
   levelText: {fileID: 1406048291}
   nameText: {fileID: 1343864409}
@@ -14215,10 +14261,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2041239956}
-  - component: {fileID: 2041239957}
   - component: {fileID: 2041239958}
+  - component: {fileID: 2041239959}
+  - component: {fileID: 2041239957}
   m_Layer: 0
-  m_Name: Utc_win_humanoid
+  m_Name: Utc_com
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14247,16 +14294,15 @@ Transform:
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 533371e7422b091489bd9f7e927cdc49,
-    type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041239955}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 533371e7422b091489bd9f7e927cdc49, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: cb61fd11d8ab28646958c86373e38fb7, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -14282,6 +14328,18 @@ MonoBehaviour:
   - {fileID: 29703468}
   - {fileID: 1730928695}
   - {fileID: 368183560}
+--- !u!114 &2041239959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041239955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3817777f524814da94be35ebc1115c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &2050069316
 GameObject:
   m_ObjectHideFlags: 0
@@ -14522,6 +14580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 0
+  charaAnimation: {fileID: 852207522}
   costText: {fileID: 841215294}
   levelText: {fileID: 339884761}
   nameText: {fileID: 148924256}
