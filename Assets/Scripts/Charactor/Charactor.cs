@@ -13,6 +13,7 @@ public class Charactor : MonoBehaviour {
     [SerializeField, Range(1, 10)]public int defensePoint; //ポイント振り
     List<Buff> attackBuffList = new List<Buff>();// 攻撃バフリスト
 
+    public string myName{get; private set;}
     public int life{get; private set;} //ライフ
     public int maxLife{get; private set;} //最大ライフ
     public int attack{get; private set;} //攻撃力
@@ -46,8 +47,9 @@ public class Charactor : MonoBehaviour {
     }
 
     //ゲーム開始時の初期化
-    public void Initialize() {
+    public void Initialize(string _myName) {
         charaAnimation = GetComponent<CharaAnimation>();
+        myName = _myName;
         life = paraTable.lifeScale * lifePoint;
         maxLife = life;
         attack = paraTable.attackScale * attackPoint;

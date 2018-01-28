@@ -35,7 +35,7 @@ public class CardInfo : GuiParts {
         Level.text = "Level "+card.level;
         cardSentence.text = card.sentence;
         levelUpSentence.text = card.levelSentence;
-        MovePosition(new Vector2(290, -110), 0.2f);
+        MovePosition(new Vector2(290, -110), 0.1f);
     }
 
     public void Hide() {
@@ -45,7 +45,7 @@ public class CardInfo : GuiParts {
 
     void TimeOver() {
         timer = 0;
-        MovePosition(new Vector2(290, -340), 0.2f);
+        MovePosition(new Vector2(290, -340), 0.1f);
     }
 }
 

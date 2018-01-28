@@ -22,8 +22,8 @@ public class GameSystem : MonoBehaviour {
         yield return null;
 
         //初期化
-        player.Initialize();
-        com.Initialize();
+        player.Initialize("you");
+        com.Initialize("unity界のあいどる");
 
         //***どちらかのHPがゼロになるまでループ***//
         while (true) {
