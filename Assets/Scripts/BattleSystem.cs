@@ -13,8 +13,8 @@ public class BattleSystem : MonoBehaviour {
     }
 
     public Owner DecideFirstMovePlayer(BasicCard playerCard, BasicCard comCard) {
-        var pCost = playerCard.GetCost();
-        var cCost = comCard.GetCost();
+        var pCost = playerCard.cost;
+        var cCost = comCard.cost;
         isSameCost = false;
         if (pCost < cCost)
             return Owner.PLAYER;

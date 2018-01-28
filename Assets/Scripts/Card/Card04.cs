@@ -9,7 +9,7 @@ public class Card04 : BasicCard {
     float counterRate = 1.5f;
 
 	void Awake () {
-		Initialize(2, "敵が攻撃した場合"+counterRate+"倍で反撃する(先行で発動の場合)", "コスト+2");
+		Initialize(2, "敵が攻撃した場合"+counterRate+"倍で反撃する(先行で発動の場合)", "コスト+2", CardType.COUNTER);
 	}
 
     protected override IEnumerator Action() {

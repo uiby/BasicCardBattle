@@ -6,7 +6,7 @@ using UnityEngine;
 public class Card02 : BasicCard {
     int percent = 100;
 	void Awake () {
-		Initialize(1, "攻撃を"+percent+"%の確率でガード(先行で発動の場合)", "コスト+2");
+		Initialize(1, "攻撃を"+percent+"%の確率でガード(先行で発動の場合)", "コスト+2", CardType.GUARD);
         percent = 100;
 	}
 

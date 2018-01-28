@@ -31,10 +31,10 @@ public class CardInfo : GuiParts {
     public void Show(BasicCard card) {
         showing = true;
         cardName.text = card.GetCardName();
-        Cost.text = "Cost "+card.GetCost();
+        Cost.text = "Cost "+card.cost;
         Level.text = "Level "+card.level;
-        cardSentence.text = card.GetSentence();
-        levelUpSentence.text = card.GetLevelSentence();
+        cardSentence.text = card.sentence;
+        levelUpSentence.text = card.levelSentence;
         MovePosition(new Vector2(290, -110), 0.2f);
     }
 

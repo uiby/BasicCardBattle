@@ -8,7 +8,7 @@ public class Card05 : BasicCard {
     int percent = 60;
     int decreasePercent = 20;
 	void Awake () {
-		Initialize(3, percent+"%回復", "回復量-"+decreasePercent+"%。コスト+1");
+		Initialize(3, percent+"%回復", "回復量-"+decreasePercent+"%。コスト+1", CardType.RECOVERY);
 	}
 
     protected override IEnumerator Action() {

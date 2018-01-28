@@ -9,7 +9,7 @@ public class Card03 : BasicCard {
     int count = 3;
 
 	void Awake () {
-		Initialize(3, count+"ターン攻撃力"+buffRate+"倍(重複可)", "コスト+1");
+		Initialize(3, count+"ターン攻撃力"+buffRate+"倍(重複可)", "コスト+1", CardType.BUFF);
 	}
 
     protected override IEnumerator Action() {

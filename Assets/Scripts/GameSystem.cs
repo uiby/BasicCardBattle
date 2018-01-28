@@ -46,7 +46,7 @@ public class GameSystem : MonoBehaviour {
     }
 
     IEnumerator StartTurn() {
-        Debug.Log("start turn");
+        //Debug.Log("start turn");
         turnCount++;
         turnText.UpdateView(turnCount);
         //バフの整理
@@ -57,7 +57,7 @@ public class GameSystem : MonoBehaviour {
 
     //カードセレクト
     IEnumerator CardSelection() {
-        Debug.Log("card select");
+        //Debug.Log("card select");
         //プレイヤー
         player.StartCardSelection();
         yield return null;
@@ -70,14 +70,14 @@ public class GameSystem : MonoBehaviour {
 
     //バトル
     IEnumerator Battle() {
-        Debug.Log("battle");
+        //Debug.Log("battle");
         yield return null;
 
         yield return new WaitForSeconds(1f);
 
         //コストの低いプレイヤからカード使用
         var firstMove = battleSystem.DecideFirstMovePlayer(player.useCard, com.useCard);
-        Debug.Log("first move:"+firstMove);
+        //Debug.Log("first move:"+firstMove);
         var firstCard = firstMove == Owner.PLAYER ? player.useCard : com.useCard;
         var secondCard = firstMove == Owner.PLAYER ? com.useCard : player.useCard;
 

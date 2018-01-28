@@ -74,7 +74,7 @@ public class Charactor : MonoBehaviour {
     }
 
     protected void SelectCard(BasicCard card) {
-        Debug.Log("select card:"+ card.GetCardName());
+        //Debug.Log("select card:"+ card.GetCardName());
         useCard = card;
         selectedCard = true;
     }

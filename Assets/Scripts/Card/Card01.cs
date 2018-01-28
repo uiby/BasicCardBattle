@@ -8,7 +8,7 @@ public class Card01 : BasicCard {
     [SerializeField] Charactor opponent; //自分
     [SerializeField, Range(10, 30)] int addtionalAttackAmount = 5;
 	void Awake () {
-		Initialize(2, "相手に攻撃", "攻撃力上昇。コスト+1");
+		Initialize(2, "相手に攻撃", "攻撃力上昇。コスト+1", CardType.ATTACK);
 	}
 
     protected override IEnumerator Action() {

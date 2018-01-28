@@ -10,20 +10,22 @@ public class BasicCard : MonoBehaviour {
     [SerializeField] Text levelText;
     [SerializeField] Text costText;
     [SerializeField] string cardName;
-    protected int cost; //カードコスト 1~5
-    protected string sentence; //効果
-    protected string levelSentence; //レベルが上がった際の効果
+    public int cost{get; protected set;} //カードコスト 1~5
+    public string sentence{get; protected set;} //効果
+    public string levelSentence{get; protected set;} //レベルが上がった際の効果
     Image background;
     protected bool isPlayed = false;
     public int level {get; protected set;} //カードレベル 3段階 プレイする度に上がる
+    public CardType cardType {get; private set;}
 
     //ゲーム開始時
-    public void Initialize(int _cost, string _sentence, string _levelSentence) { //初期化
+    public void Initialize(int _cost, string _sentence, string _levelSentence, CardType _cardType) { //初期化
         background = GetComponent<Image>();
         level = 1;
         cost = _cost;
         sentence = _sentence;
         levelSentence = _levelSentence;
+        cardType = _cardType;
         UpdateView();
     }
 
@@ -62,15 +64,7 @@ public class BasicCard : MonoBehaviour {
     public string GetCardName() {
         return cardName;
     }
-    public string GetSentence() {
-        return sentence;
-    }
-    public string GetLevelSentence() {
-        return levelSentence;
-    }
-    public int GetCost() {
-        return cost;
-    }
+
     public Owner GetOwner() {
         return owner;
     }
@@ -81,8 +75,8 @@ public class BasicCard : MonoBehaviour {
     public void Copy(BasicCard card) {
         charaAnimation = card.GetCharaAnimation();
         cardName = card.GetCardName();
-        sentence = card.GetSentence();
-        levelSentence = card.GetLevelSentence();
+        sentence = card.sentence;
+        levelSentence = card.levelSentence;
         level = card.level;
         cost = card.cost;
         UpdateView();

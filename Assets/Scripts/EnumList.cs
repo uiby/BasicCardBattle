@@ -17,3 +17,11 @@ public class Buff {
         count--;
     }
 }
+
+public enum CardType {
+    ATTACK,
+    GUARD,
+    BUFF,
+    COUNTER,
+    RECOVERY,
+}
