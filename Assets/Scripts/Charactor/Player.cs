@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class Player : Charactor {
     [SerializeField] GuiParts selectionCanvas;
 
+    void Start() {
+        personality = Personality.UNKNOWN;
+    }
+
     public override void StartCardSelection() {
         base.StartCardSelection();
         selectionCanvas.MovePosition(new Vector2(-120, -150), 0.3f);

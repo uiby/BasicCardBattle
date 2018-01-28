@@ -23,6 +23,7 @@ public class Charactor : MonoBehaviour {
     protected bool selectedCard;
     protected CharaAnimation charaAnimation;
     public BasicCard useCard {get; protected set;} //使用するカード
+    public Personality personality {get; protected set;}
 
     public float GetTotalBuff() {
         var rate = 1f;
@@ -31,6 +32,9 @@ public class Charactor : MonoBehaviour {
         }
 
         return rate;
+    }
+    public float GetMaxBuff() {
+        return 1.8f * 1.8f * 1.8f;
     }
 
     public int GetAttacOnBuff() {
@@ -54,7 +58,7 @@ public class Charactor : MonoBehaviour {
         maxLife = life;
         attack = paraTable.attackScale * attackPoint;
         defense = paraTable.defenseScale * defensePoint;
-        Debug.Log(owner+" life:"+life+" attack:"+attack+" defense:"+defense);
+        //Debug.Log(owner+" life:"+life+" attack:"+attack+" defense:"+defense);
         lifeGauge.Initialize(life, life);
     }
 

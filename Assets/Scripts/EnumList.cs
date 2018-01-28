@@ -4,6 +4,12 @@
     NONE,
 }
 
+public enum Personality {
+    UNKNOWN,
+    NORMAL,
+    HARD,
+}
+
 public class Buff {
     public float rate;
     public int count;

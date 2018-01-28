@@ -7,7 +7,7 @@ public class RandomFirst : GuiParts {
     [SerializeField] Vector2 comPos;
     public Owner randomer{get; private set;}
 
-    void Awake() {
+    protected override void Awake() {
         base.Awake();
         randomer = (Owner)Random.Range(0, 2);
         ChangeRandomer();

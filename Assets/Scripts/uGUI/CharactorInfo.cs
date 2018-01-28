@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CharactorInfo : GuiParts {
     [SerializeField] Text charaName;
+    [SerializeField] Text personalityText;
     [SerializeField] Text lifeText;
     [SerializeField] Text attackText;
     [SerializeField] Text buffText;
@@ -30,6 +31,11 @@ public class CharactorInfo : GuiParts {
     public void Show(Charactor chara) {
         showing = true;
         charaName.text = chara.myName;
+        switch(chara.personality) {
+            case Personality.UNKNOWN: personalityText.text = "unknown"; break;
+            case Personality.NORMAL: personalityText.text = "決断強い"; break;
+            case Personality.HARD: personalityText.text = "柔軟性"; break;
+        }
         lifeText.text = chara.life.ToString();
         attackText.text = chara.attack.ToString();
         buffText.text = chara.GetTotalBuff().ToString(".##倍");

@@ -8,16 +8,16 @@ public class Fuzzy : MonoBehaviour {
     [SerializeField] AnimationCurve quadraticUp; //上目の2次間数
     [SerializeField] AnimationCurve quadraticDown; //下目の2次間数
 
-    public float FuzzyLinear(int value, int max) {
-        return linear.Evaluate((float)value/max);
+    public float FuzzyLinear(float value, float max) {
+        return linear.Evaluate(value/max);
     }
 
-    public float FuzzyQuadraticUp(int value, int max) {
-        return quadraticUp.Evaluate((float)value/max);
+    public float FuzzyQuadraticUp(float value, float max) {
+        return quadraticUp.Evaluate(value/max);
     }
 
-    public float FuzzyQuadraticDown(int value, int max) {
-        return quadraticDown.Evaluate((float)value/max);
+    public float FuzzyQuadraticDown(float value, float max) {
+        return quadraticDown.Evaluate(value/max);
     }
 
     //論理和
