@@ -25,6 +25,7 @@ public class Charactor : MonoBehaviour {
     public BasicCard useCard {get; protected set;} //使用するカード
     public Personality personality {get; protected set;}
 
+    //バフの倍率を取得
     public float GetTotalBuff() {
         var rate = 1f;
         for (int n = 0; n < attackBuffList.Count; n++) {
@@ -37,14 +38,18 @@ public class Charactor : MonoBehaviour {
         return 1.8f * 1.8f * 1.8f;
     }
 
+    //最終的な攻撃力を取得
     public int GetAttacOnBuff() {
         return (int)(attack * GetTotalBuff());
         //return baseAttackPoint * attackBuffList.Aggregate((now, next) => now * next.rate);
     }
 
+    //バフの追加
     public void AddBuff(float rate, int count) {
         attackBuffList.Add(new Buff(rate, count));
     }
+
+    //バフの更新
     public void UpdateBuff() {
         attackBuffList.ForEach(buff => buff.CountDown());
         attackBuffList = attackBuffList.Where(buff => buff.count >= 0).ToList();
